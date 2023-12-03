@@ -1,0 +1,39 @@
+// 1) Create a counter in Javascript (counts down from 30 to 0)
+
+let count = 30;
+setInterval(counter, 1000);
+
+function counter() {
+  if (count === 0) {
+    clearInterval(this);
+  }
+
+  console.log(count);
+  count = count - 1;
+}
+
+// 2) Calculate the time it takes between a setTimeout call and the inner function actually running
+const time = new Date();
+
+const startTime = time.getTime();
+
+setTimeout(checkTime, 1000);
+
+function checkTime() {
+  const endTime = time.getTime();
+  console.log("Time take = " + (endTime - startTime) + " milliseconds");
+}
+
+// 3) Create a terminal clock(HH:MM:SS)
+
+const interval = setInterval(displayClock, 1000);
+
+function displayClock() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+
+  console.clear();
+  console.log(hours + ":" + minutes + ":" + seconds);
+}
