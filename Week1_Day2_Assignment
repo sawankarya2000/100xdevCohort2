@@ -13,14 +13,12 @@ function counter() {
 }
 
 // 2) Calculate the time it takes between a setTimeout call and the inner function actually running
-const time = new Date();
-
-const startTime = time.getTime();
+const startTime = new Date().getTime();
 
 setTimeout(checkTime, 1000);
 
 function checkTime() {
-  const endTime = time.getTime();
+  const endTime = new Date().getTime();
   console.log("Time take = " + (endTime - startTime) + " milliseconds");
 }
 
